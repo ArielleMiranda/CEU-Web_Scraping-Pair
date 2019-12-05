@@ -58,7 +58,7 @@ get_general_info <- function(u) {
 ## CREATE A TABLE THAT CALLS THE FUNCTION `info_table_list` AND ADD COLUMN FOR NAME
 ## The result will be a tidy table - ID is `Name` and `key``
 uni_info <- function(url) {
-  print(url)
+#  print(url)
   name <- 
     read_html(url) %>% 
     html_nodes('.jhCUMS')%>%
