@@ -76,11 +76,15 @@ uni_info <- function(url) {
     read_html(url) %>% 
     html_nodes('.eKbYXJ')%>%
     html_text()
+  r <-  strsplit(rank, "i")[[1]][1]
+  rank<- gsub('#', '', r) %>% as.numeric()
   
   overall_score <- 
     read_html(url) %>% 
     html_nodes('.fkFhvx')%>%
     html_text()
+  o <- gsub("Overall Score ", "", overall_score)
+  overall_score <- gsub("/100", "", o) %>% as.numeric()
   
   general_info <- get_general_info(url) %>% 
     filter(!is.na(key)) %>% 
